@@ -15,6 +15,10 @@ const loadPhones = () => {
 
 /*-----------------display data----------------*/
 const displayData = (phones) => {
+  //  show total found product
+  const totalProduct = document.getElementById("totalProduct");
+  totalProduct.innerHTML = ` <i class="fas fa-tags"></i> Total Product  (${phones.length})`;
+  console.log(phones.length);
   // selectors
   const initaialResult = phones.slice(1, 21);
   const status = document.getElementById("status");
@@ -25,6 +29,7 @@ const displayData = (phones) => {
     resultContainer.textContent = "";
     status.textContent = "No Result Found";
     seeMore("none");
+    totalProduct.innerHTML = "";
   }
   //  show initialy 20 result
   else if (phones.length > 20) {

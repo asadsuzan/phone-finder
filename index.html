@@ -42,6 +42,9 @@
                     <button type="submit" id="search-btn" onclick="loadPhones">Search</button>
                 </form>
 
+                <h6 class="my-2 text-primary"><span id="totalProduct"></span></h6>
+
+
             </section>
             <!-- search-controls end -->
         </section>
@@ -53,8 +56,9 @@
         <!-- result-container start -->
         <section class="result-container" id="result-container">
         </section>
-        <!-- result-container start -->
+        <!-- result-container end -->
         <!-- details page start -->
+        <!-- details page modal start -->
         <div class="modal " id="myModal">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
@@ -64,14 +68,19 @@
                     </div>
                     <!-- Modal body -->
                     <div class="modal-body">
+                        <!-- modal img -->
                         <div class="moadal-img  text-center">
                             <img src="./img/98628718-c0db-40ff-ab1a-9d2ca4fa3400.jpg" alt="" id="moadal-img"
                                 class="w-50">
                         </div>
+                        <!-- relase date -->
                         <p class="relase-date"></p>
+                        <!-- sensors -->
                         <b class="sensorsDiv">Sesors => <span class="sensors"></span></b>
+                        <!-- main-fetures -->
                         <ul class="main-fetures">
                         </ul>
+                        <!-- others -->
                         <ul class="Others">
                         </ul>
                     </div>
