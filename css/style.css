@@ -22,9 +22,13 @@ img {
 .disable {
   pointer-events: none;
   cursor: default;
+  color: #000000 !important;
 }
 .active {
   color: var(--primary-btn);
+}
+body {
+  background-color: whitesmoke;
 }
 
 /* nav */
@@ -34,7 +38,7 @@ img {
   align-items: center;
   padding: 3rem 0;
 }
-.brand {
+.logo {
   font-weight: 900;
   font-size: 2rem;
   font-style: italic;
@@ -44,7 +48,7 @@ img {
   display: flex;
   list-style: none;
 }
-.nav-item {
+.nav-items {
   margin: 0 2rem;
   font-size: 1.1rem;
   font-weight: bolder;
@@ -88,29 +92,35 @@ img {
 }
 /* result-container */
 .result-container {
-  margin: 10rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
 }
 .cards {
-  /* background-color: whitesmoke; */
-  display: inline-block;
-  border: 3px solid whitesmoke;
+  border: 3px solid #fff;
   padding: 0 1rem;
+  background-color: #fff;
+  width: 100%;
+  margin: 0 auto;
 }
 .ratting {
-  font-size: 2rem;
+  font-size: 0.7rem;
   color: var(--primary-btn);
+  padding: 10px 0;
+  display: block;
 }
 .name {
-  padding: 5px 0;
+  padding: 3px 0;
 }
 .brands {
-  padding: 5px 0;
+  padding: 3px 0;
 }
 .card-btn {
   background-color: var(--primary-btn);
   color: var(--primary-txt);
   border: none;
-  padding: 0.5rem 2rem;
+  padding: 0.3rem;
+  width: 100%;
   cursor: pointer;
   margin: 5px 0;
 }

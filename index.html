@@ -6,33 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>find your phone</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- font-awesome cdn -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <!-- custom css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
     <!-- -----------------header area strat------------------------ -->
     <header class="header container">
         <!-- nav strat -->
         <nav class="nav">
-            <h1 class="brand">YOᑌᖇ ᑭᕼOᑎE</h1>
+            <h1 class="logo">YOᑌᖇ ᑭᕼOᑎE</h1>
             <ul class="nav-bar">
-                <li class="nav-item "><a href="#" class="nav-link active">Home</a></li>
-                <li class="nav-item disable"><a href="#" class="nav-link">Phones</a></li>
-                <li class="nav-item disable"><a href="#" class="nav-link">Support</a></li>
+                <li class="nav-items "><a href="#" class="nav-links active">Home</a></li>
+                <li class="nav-items "><a href="#" class="nav-links disable">Phones</a></li>
+                <li class="nav-items "><a href="#" class="nav-links disable">Support</a></li>
             </ul>
         </nav>
         <!-- nav end -->
 
         <!-- banner strat -->
         <section class="slider">
-            <h1 class="slider-title">Best Skin <br> In The Word 2021</h1>
+            <h1 class="slider-title">Best Skin <br> In The Word 2022</h1>
             <p class="slider-txt">consectetur adipisicing elit. Itaque dolorem, aliquam quos. Molestias dolorum <br>
                 explicabo totam illum itaque sit</p>
             <!-- search-controls strat -->
             <section class="search-controls">
-                <input type="text" placeholder="Search products...." id="search-filed">
-                <button type="button" id="search-btn">Search</button>
+                <form action="">
+                    <input type="text" placeholder="Search products...." id="search-filed" required>
+                    <button type="submit" id="search-btn">Search</button>
+                </form>
 
             </section>
             <!-- search-controls end -->
@@ -43,20 +51,54 @@
     </header>
 
     <!-- -----------------header area end------------------------ -->
-    <main class="container">
+    <main class="container mt-5">
+        <!-- result-container start -->
         <section class="result-container">
-            <div class="cards">
+            <div class="cards shadow-sm rounded">
                 <img src="./img/98628718-c0db-40ff-ab1a-9d2ca4fa3400.jpg" alt="" width="300px">
                 <div class="cards-body">
-                    <span class="ratting">*****</span>
-                    <h3 class="name"><span id="name">Name:</span> Ipone 6</h3>
-                    <h3 class="brands"><span id="brand">Brand:</span> Apple</h3>
-                    <button class="card-btn">Explore</button>
+                    <span class="ratting">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </span>
+                    <h6 class="name"><span id="name">Name:</span> Ipone 6</h6>
+                    <h6 class="brands"><span id="brand">Brand:</span> Apple</h6>
+                    <button class="card-btn" data-bs-toggle="modal" data-bs-target="#myModal">Explore</button>
 
                 </div>
             </div>
+
         </section>
+        <!-- result-container start -->
+        <!-- details page start -->
+        <div class="modal " id="myModal">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="moadal-img">
+                            <img src="./img/98628718-c0db-40ff-ab1a-9d2ca4fa3400.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- details page end -->
     </main>
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <!-- custom js -->
     <script src="js/app.js"></script>
 </body>
