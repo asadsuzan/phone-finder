@@ -37,9 +37,9 @@
                 explicabo totam illum itaque sit</p>
             <!-- search-controls strat -->
             <section class="search-controls">
-                <form action="">
+                <form onsubmit="loadPhones(); return false">
                     <input type="text" placeholder="Search products...." id="search-filed" required>
-                    <button type="submit" id="search-btn">Search</button>
+                    <button type="submit" id="search-btn" onclick="loadPhones">Search</button>
                 </form>
 
             </section>
