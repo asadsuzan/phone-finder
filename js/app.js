@@ -1,4 +1,4 @@
-// load data from api
+/*------------ load data from api-------------------------*/
 const loadPhones = () => {
   // selectors
   const searchFiled = document.getElementById("search-filed");
@@ -13,7 +13,7 @@ const loadPhones = () => {
   //   console.log(url);
 };
 
-// display data
+/*-----------------display data----------------*/
 const displayData = (phones) => {
   // selectors
   const status = document.getElementById("status");
@@ -39,7 +39,7 @@ const displayData = (phones) => {
           </span>
           <h6 class="name"><span id="name">Name:</span> ${phone.phone_name}</h6>
           <h6 class="brands"><span id="brand">Brand:</span> ${phone.brand}</h6>
-          <button class="card-btn" data-bs-toggle="modal" data-bs-target="#myModal">Explore</button>
+          <button onclick="loadDetails('${phone.slug}')" class="card-btn" data-bs-toggle="modal" data-bs-target="#myModal">Explore</button>
 
       </div>
   </div>`;
@@ -48,5 +48,14 @@ const displayData = (phones) => {
       //   console.log(phone);
     });
   }
-  console.log(resultContainer.length);
+};
+
+/*---------load details----------- */
+const loadDetails = (details) => {
+  // selectors
+  const url = `https://openapi.programming-hero.com/api/phone/${details}`;
+  //   fetch details
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => console.log(data.data));
 };
