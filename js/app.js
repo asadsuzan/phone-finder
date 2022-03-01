@@ -1,5 +1,8 @@
 /*------------ load data from api-------------------------*/
 const loadPhones = () => {
+  loadSpiner("block");
+  clearData("none");
+  seeMore("none");
   // selectors
   const searchFiled = document.getElementById("search-filed");
   const searchTxt = searchFiled.value;
@@ -15,10 +18,13 @@ const loadPhones = () => {
 
 /*-----------------display data----------------*/
 const displayData = (phones) => {
+  clearData("grid");
+  loadSpiner("none");
+
   //  show total found product
   const totalProduct = document.getElementById("totalProduct");
   totalProduct.innerHTML = ` <i class="fas fa-tags"></i> Total Product  (${phones.length})`;
-  console.log(phones.length);
+
   // selectors
   const initaialResult = phones.slice(1, 21);
   const status = document.getElementById("status");
@@ -113,12 +119,12 @@ const displayDetails = (details) => {
     sensors.innerHTML = `${details.mainFeatures.sensors.join(", ")}`;
     Others.innerHTML = `
     <h5>Others</h5>
-    <li>Bluetooth: <sapn>${details.others.Bluetooth}</sapn></li>
-    <li>GPS:<sapn>${details.others.GPS}</sapn></li>
-    <li> NFC:<sapn>${details.others.NFC}</sapn></li>
-    <li> Radio:<sapn>${details.others.Radio}</sapn></li>
-    <li> USB: <sapn>${details.others.USB}</sapn></li>
-    <li> WLAN:<sapn>${details.others.WLAN}</sapn></li>
+    <li>Bluetooth: <span>${details.others.Bluetooth}</span></li>
+    <li>GPS:<span>${details.others.GPS}</span></li>
+    <li> NFC:<span>${details.others.NFC}</span></li>
+    <li> Radio:<span>${details.others.Radio}</span></li>
+    <li> USB: <span>${details.others.USB}</span></li>
+    <li> WLAN:<span>${details.others.WLAN}</span></li>
     `;
   } else {
     moadalImg.src = details.image;
@@ -131,4 +137,15 @@ const displayDetails = (details) => {
 const seeMore = (showHide) => {
   const seeMoreBtn = document.querySelector(".more-btn");
   seeMoreBtn.style.display = showHide;
+};
+
+// load spiner
+const loadSpiner = (load) => {
+  const spiner = document.querySelector(".spiner");
+  spiner.style.display = load;
+};
+// clear curent result
+const clearData = (cleanResult) => {
+  const resultContainer = document.getElementById("result-container");
+  resultContainer.style.display = cleanResult;
 };

@@ -141,3 +141,31 @@ body {
 .more-btn {
   display: none;
 }
+
+/* modal details */
+.relase-date {
+  font-size: 13px;
+  font-weight: bolder;
+}
+.sensorsDiv,
+.main-fetures,
+.Others {
+  color: var(--primary-btn);
+}
+.modal-body ul {
+  margin: 0 !important;
+  padding: 20px;
+}
+.modal-body span,
+.Others span {
+  font-size: 14px;
+  color: #000000;
+}
+/* spiner */
+.spiner {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
