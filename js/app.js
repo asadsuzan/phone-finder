@@ -24,6 +24,7 @@ const displayData = (phones) => {
   if (phones.length === 0) {
     resultContainer.textContent = "";
     status.textContent = "No Result Found";
+    seeMore("none");
   }
   //  show initialy 20 result
   else if (phones.length > 20) {
@@ -86,8 +87,39 @@ const loadDetails = (id) => {
 };
 
 /*---------display details----------- */
-const displayDetails = () => {
-  console.log("yes");
+const displayDetails = (details) => {
+  // Selection
+  const moadalImg = document.getElementById("moadal-img");
+  const relaseDate = document.querySelector(".relase-date");
+  const mainFetures = document.querySelector(".main-fetures");
+  const sensors = document.querySelector(".sensors");
+  const Others = document.querySelector(".Others");
+  // cheeck details its contains others and release date key or not
+  if (details[("others", "releaseDate")]) {
+    moadalImg.src = details.image;
+    relaseDate.innerHTML = details.releaseDate;
+    mainFetures.innerHTML = `
+                            <h5>MainFeatures</h5>
+                            <li>ChipSet: <span>${details.mainFeatures.chipSet}</span> </li>
+                            <li>DisplaySize: <span>${details.mainFeatures.displaySize}</li>
+                            <li >Memory: <span>${details.mainFeatures.memory}</li>
+                            <li>Storage: <span>${details.mainFeatures.storage}</span> </li>
+    `;
+    sensors.innerHTML = `${details.mainFeatures.sensors.join(", ")}`;
+    Others.innerHTML = `
+    <h5>Others</h5>
+    <li>Bluetooth: <sapn>${details.others.Bluetooth}</sapn></li>
+    <li>GPS:<sapn>${details.others.GPS}</sapn></li>
+    <li> NFC:<sapn>${details.others.NFC}</sapn></li>
+    <li> Radio:<sapn>${details.others.Radio}</sapn></li>
+    <li> USB: <sapn>${details.others.USB}</sapn></li>
+    <li> WLAN:<sapn>${details.others.WLAN}</sapn></li>
+    `;
+  } else {
+    moadalImg.src = details.image;
+    relaseDate.innerHTML = "";
+    Others.innerHTML = "";
+  }
 };
 /*---------see more result----------- */
 
