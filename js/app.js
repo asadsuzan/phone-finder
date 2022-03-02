@@ -29,6 +29,7 @@ const displayData = (phones) => {
 
   // selectors
   const initaialResult = phones.slice(1, 21);
+  const moreResult = phones.slice(21, phones.length);
   const status = document.getElementById("status");
   const resultContainer = document.getElementById("result-container");
   resultContainer.innerHTML = "";
@@ -64,7 +65,7 @@ const displayData = (phones) => {
   </div>`;
       resultContainer.appendChild(div);
     });
-    seeMore("block");
+    seeMore("block", moreResult);
   } else {
     status.textContent = "";
     phones.forEach((phone) => {
@@ -137,9 +138,32 @@ const displayDetails = (details) => {
   }
 };
 /*---------see more result----------- */
-
-const seeMore = (showHide) => {
+const seeMore = (showHide, morePhones) => {
   const seeMoreBtn = document.querySelector(".more-btn");
+  seeMoreBtn.addEventListener("click", function () {
+    const resultContainer = document.getElementById("result-container");
+    morePhones.forEach((phone) => {
+      const div = document.createElement("div");
+      div.innerHTML = `<div class="cards shadow-sm rounded">
+       <div class="card-img "> <img src="${phone.image}" alt="" width="300px"></div>
+        <div class="cards-body">
+            <span class="ratting">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </span>
+            <h6 class="name"><span id="name">Name:</span> ${phone.phone_name}</h6>
+            <h6 class="brands"><span id="brand">Brand:</span> ${phone.brand}</h6>
+            <button onclick="loadDetails('${phone.slug}')" class="card-btn" data-bs-toggle="modal" data-bs-target="#myModal">Explore</button>
+
+        </div>
+    </div>`;
+      resultContainer.appendChild(div);
+      seeMore("none");
+    });
+  });
   seeMoreBtn.style.display = showHide;
 };
 
