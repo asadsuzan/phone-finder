@@ -12,6 +12,7 @@
   --primary-txt: #fff;
   --secondary-txt: #000000;
 }
+
 img {
   max-width: 100%;
 }
@@ -146,6 +147,7 @@ body {
 .relase-date {
   font-size: 13px;
   font-weight: bolder;
+  padding: 10px 0;
 }
 .sensorsDiv,
 .main-fetures,
@@ -168,4 +170,43 @@ body {
   top: 80%;
   transform: translate(-50%, -50%);
   display: none;
+}
+
+/* mediaa queies */
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 97%;
+  }
+  .nav {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .nav-bar {
+    padding: 0;
+  }
+  .nav-items {
+    margin: 1rem 2rem;
+    font-size: 13px;
+  }
+  .result-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 35px;
+  }
+  .search-controls input {
+    width: 70%;
+  }
+  .search-controls button {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+  #totalProduct {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .result-container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 35px;
+  }
 }

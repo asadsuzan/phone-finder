@@ -23,7 +23,9 @@ const displayData = (phones) => {
 
   //  show total found product
   const totalProduct = document.getElementById("totalProduct");
-  totalProduct.innerHTML = ` <i class="fas fa-tags"></i> Total Product  (${phones.length})`;
+  totalProduct.innerHTML = ` <i class="fas fa-tags"></i> Total Product  (${phones.length})
+  on your search`;
+  totalProduct.style.color = "royalblue";
 
   // selectors
   const initaialResult = phones.slice(1, 21);
@@ -35,7 +37,9 @@ const displayData = (phones) => {
     resultContainer.textContent = "";
     status.textContent = "No Result Found";
     seeMore("none");
-    totalProduct.innerHTML = "";
+    totalProduct.innerHTML = ` <i class="fas fa-tags"></i> Total Product  (${phones.length})
+    on your search`;
+    totalProduct.style.color = "red";
   }
   //  show initialy 20 result
   else if (phones.length > 20) {
