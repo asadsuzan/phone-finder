@@ -1,20 +1,48 @@
+// selectors 
+const searchFiled = document.getElementById("search-filed");
+const keywords = document.querySelector('.keywords')
+
+
+
 /*------------ load data from api-------------------------*/
 const loadPhones = () => {
   loadSpiner("block");
   clearData("none");
   seeMore("none");
   // selectors
-  const searchFiled = document.getElementById("search-filed");
-  const searchTxt = searchFiled.value;
-  const url = ` https://openapi.programming-hero.com/api/phones?search=${searchTxt}`;
+  let searchTxt = searchFiled.value;
+
+  let url;
+  if(searchTxt){
+    url = `https://openapi.programming-hero.com/api/phones?search=${searchTxt}`;
+  }else{
+    url = `https://openapi.programming-hero.com/api/phones?search=b`;
+  }
+
   //   clear search txt
   searchFiled.value = "";
   //   fetch data
-  fetch(url)
+  fetch(url )
     .then((res) => res.json())
     .then((data) => displayData(data.data));
-  //   console.log(url);
+  
 };
+
+// initaialResult with default api 
+window.addEventListener('DOMContentLoaded' ,loadPhones)
+
+// serach by keywords 
+keywords.addEventListener('click',(e)=>{
+
+  if(e.target.innerText.length <= 1){
+    searchFiled.value = e.target.innerText
+    
+    e.target.classList.add('completed')
+   
+    loadPhones()
+  }
+
+})
 
 /*-----------------display data----------------*/
 const displayData = (phones) => {

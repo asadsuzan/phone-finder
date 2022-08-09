@@ -12,6 +12,9 @@
   --primary-txt: #fff;
   --secondary-txt: #000000;
 }
+a{
+  text-decoration: none;
+}
 
 img {
   max-width: 100%;
@@ -71,6 +74,28 @@ body {
   color: var(--primary-txt);
   cursor: pointer;
 }
+
+/* search key  */
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+ }
+ .completed{
+   background: red !important;
+ }
+ .keywords a{
+   height: 20px;
+   width: 20px;
+   display: flex;
+   background: rgb(46, 110, 213);
+   color: #fff;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+   text-transform: uppercase;
+   margin-bottom: 2rem;
+ }
 
 /* slider */
 .slider {
